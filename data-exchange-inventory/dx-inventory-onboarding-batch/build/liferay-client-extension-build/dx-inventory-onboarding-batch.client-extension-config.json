@@ -1,0 +1,21 @@
+{
+  "com.liferay.oauth2.provider.configuration.OAuth2ProviderApplicationHeadlessServerConfiguration~dx-inventory-onboarding-object-batch-oauth-application-headless-server" : {
+    ".serviceAddress" : "localhost:8080",
+    ".serviceScheme" : "http",
+    ":configurator:policy" : "force",
+    "baseURL" : "${portalURL}/o/dx-inventory-onboarding-batch",
+    "buildTimestamp" : 1749715506634,
+    "description" : "",
+    "dxp.lxc.liferay.com.virtualInstanceId" : "default",
+    "homePageURL" : "$[conf:.serviceScheme]://$[conf:.serviceAddress]",
+    "name" : "DX Inventory Onboarding Batch OAuth Application Headless Server",
+    "projectId" : "dxinventoryonboardingbatch",
+    "projectName" : "dx-inventory-onboarding-batch",
+    "properties" : [ ],
+    "scopes" : [ "Liferay.Headless.Batch.Engine.everything", "Liferay.Object.Admin.REST.everything" ],
+    "sourceCodeURL" : "",
+    "type" : "oAuthApplicationHeadlessServer",
+    "typeSettings" : [ ".serviceAddress=localhost:8080", ".serviceScheme=http", "scopes=Liferay.Headless.Batch.Engine.everything\nLiferay.Object.Admin.REST.everything" ],
+    "webContextPath" : "/dx-inventory-onboarding-batch"
+  }
+}

@@ -1,0 +1,147 @@
+{
+  "configuration": {
+    "className": "com.liferay.headless.admin.list.type.dto.v1_0.ListTypeDefinition",
+    "parameters": {
+      "containsHeaders": "false",
+      "createStrategy": "UPSERT",
+      "importStrategy": "ON_ERROR_FAIL",
+      "updateStrategy": "UPDATE"
+    },
+    "taskItemDelegateName": "DEFAULT"
+  },
+  "items": [
+    {
+      "system": false,
+      "name_i18n": {
+        "en-US": "Inventory Boolean Values"
+      },
+      "name": "Inventory Boolean Values",
+      "listTypeEntries": [
+        {
+          "name_i18n": {
+            "en-US": "Yes"
+          },
+          "name": "Yes",
+          "type": "",
+          "key": "Yes",
+          "externalReferenceCode": "yes"
+        },
+        {
+          "name_i18n": {
+            "en-US": "No"
+          },
+          "name": "No",
+          "type": "",
+          "key": "No",
+          "externalReferenceCode": "no"
+        }
+      ],
+      "externalReferenceCode": "inventory-boolean-values"
+    },
+    {
+      "system": false,
+      "name_i18n": {
+        "en-US": "Inventory Scale"
+      },
+      "name": "Inventory Scale",
+      "listTypeEntries": [
+        {
+          "name_i18n": {
+            "en-US": "1"
+          },
+          "name": "1",
+          "type": "",
+          "key": "1",
+          "externalReferenceCode": "03df4947-69f1-6363-9c63-1386558fb813"
+        },
+        {
+          "name_i18n": {
+            "en-US": "2"
+          },
+          "name": "2",
+          "type": "",
+          "key": "2",
+          "externalReferenceCode": "67b2073a-8a10-4a20-834b-1b7ef6484e87"
+        },
+        {
+          "name_i18n": {
+            "en-US": "3"
+          },
+          "name": "3",
+          "type": "",
+          "key": "3",
+          "externalReferenceCode": "4266b750-bb0d-380f-c917-a55802f204a9"
+        },
+        {
+          "name_i18n": {
+            "en-US": "4"
+          },
+          "name": "4",
+          "type": "",
+          "key": "4",
+          "externalReferenceCode": "cd24658f-3d16-979b-002e-ddc5235874ae"
+        },
+        {
+          "name_i18n": {
+            "en-US": "5"
+          },
+          "name": "5",
+          "type": "",
+          "key": "5",
+          "externalReferenceCode": "6dddc04f-958c-29b3-1bfd-1c3f00c685b1"
+        }
+      ],
+      "externalReferenceCode": "inventory-scale"
+    },
+    {
+      "system": false,
+      "name_i18n": {
+        "en-US": "Dataset Classification"
+      },
+      "name": "Dataset Classification",
+      "listTypeEntries": [
+        {
+          "name_i18n": {
+            "ar-SA": "يفتح",
+            "en-US": "Open"
+          },
+          "name": "Open",
+          "type": "",
+          "key": "Open",
+          "externalReferenceCode": "open"
+        },
+        {
+          "name_i18n": {
+            "ar-SA": "حساس",
+            "en-US": "Sensitive"
+          },
+          "name": "Sensitive",
+          "type": "",
+          "key": "Sensitive",
+          "externalReferenceCode": "sensitive"
+        },
+        {
+          "name_i18n": {
+            "ar-SA": "سر",
+            "en-US": "Secret"
+          },
+          "name": "Secret",
+          "type": "",
+          "key": "Secret",
+          "externalReferenceCode": "secret"
+        },
+        {
+          "name_i18n": {
+            "ar-SA": "مؤتمن",
+            "en-US": "Confidential"
+          },
+          "name": "Confidential",
+          "type": "",
+          "key": "Confidential",
+          "externalReferenceCode": "confidential"
+        }
+      ],
+      "externalReferenceCode": "dataset-classification"
+    }
+  ]
+}

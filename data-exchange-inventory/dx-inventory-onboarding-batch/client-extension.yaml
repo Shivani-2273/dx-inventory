@@ -1,0 +1,15 @@
+assemble:
+    - from: batch
+      into: batch
+dx-inventory-onboarding-batch:
+    name: DX Inventory Onboarding Batch
+    oAuthApplicationHeadlessServer: dx-inventory-onboarding-object-batch-oauth-application-headless-server
+    type: batch
+dx-inventory-onboarding-object-batch-oauth-application-headless-server:
+    .serviceAddress: localhost:8080
+    .serviceScheme: http
+    name: DX Inventory Onboarding Batch OAuth Application Headless Server
+    scopes:
+        - Liferay.Headless.Batch.Engine.everything
+        - Liferay.Object.Admin.REST.everything
+    type: oAuthApplicationHeadlessServer

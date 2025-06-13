@@ -1,0 +1,1063 @@
+{
+  "configuration": {
+    "className": "com.liferay.object.admin.rest.dto.v1_0.ObjectFolder",
+    "parameters": {
+      "containsHeaders": "true",
+      "createStrategy": "UPSERT",
+      "onErrorFail": "true",
+      "updateStrategy": "UPDATE"
+    },
+    "taskItemDelegateName": "DEFAULT"
+  },
+  "items": [
+    {
+      "objectFolderItems": [
+        {
+          "positionY": 0,
+          "objectDefinition": {
+            "enableComments": true,
+            "objectRelationships": [
+              {
+                "objectDefinitionSystem2": false,
+                "objectField": {
+                  "relationshipType": "oneToMany",
+                  "indexed": true,
+                  "localized": false,
+                  "objectRelationshipExternalReferenceCode": "96e8db97-49df-2da5-24b3-c73986a3d923",
+                  "objectFieldSettings": [
+                    {
+                      "name": "objectDefinition1ShortName",
+                      "value": "InventoryDetails"
+                    },
+                    {
+                      "name": "objectRelationshipERCObjectFieldName",
+                      "value": "r_inventoryDatasetRelationship_c_inventoryDetailsERC"
+                    }
+                  ],
+                  "readOnly": "false",
+                  "DBType": "Long",
+                  "label": {
+                    "en_US": "Inventory Dataset Relationship"
+                  },
+                  "type": "Long",
+                  "required": false,
+                  "externalReferenceCode": "5c7ff3ce-fc19-d3ad-3773-c5912e24033e",
+                  "indexedAsKeyword": false,
+                  "system": false,
+                  "indexedLanguageId": "",
+                  "unique": false,
+                  "name": "r_inventoryDatasetRelationship_c_inventoryDetailsId",
+                  "objectDefinitionExternalReferenceCode1": "0ec7b7e5-7f91-d2cc-4356-8003e50b0566",
+                  "state": false,
+                  "businessType": "Relationship",
+                  "readOnlyConditionExpression": ""
+                },
+                "parameterObjectFieldName": "",
+                "parameterObjectFieldId": 0,
+                "label": {
+                  "en_US": "Inventory Dataset Relationship"
+                },
+                "reverse": false,
+                "type": "oneToMany",
+                "externalReferenceCode": "96e8db97-49df-2da5-24b3-c73986a3d923",
+                "objectDefinitionModifiable2": true,
+                "system": false,
+                "name": "inventoryDatasetRelationship",
+                "deletionType": "prevent",
+                "objectDefinitionExternalReferenceCode1": "0ec7b7e5-7f91-d2cc-4356-8003e50b0566",
+                "objectDefinitionExternalReferenceCode2": "inventory-onboarding",
+                "objectDefinitionName2": "InventoryOnboarding"
+              }
+            ],
+            "objectFolderExternalReferenceCode": "data-exchange-inventory-onboarding",
+            "enableCategorization": true,
+            "accountEntryRestrictedObjectFieldName": "",
+            "objectActions": [],
+            "enableLocalization": true,
+            "accountEntryRestricted": false,
+            "externalReferenceCode": "0ec7b7e5-7f91-d2cc-4356-8003e50b0566",
+            "objectFields": [
+              {
+                "indexed": false,
+                "localized": false,
+                "objectFieldSettings": [],
+                "readOnly": "true",
+                "DBType": "String",
+                "label": {
+                  "en_US": "Author"
+                },
+                "type": "String",
+                "required": false,
+                "externalReferenceCode": "8e9a91d8-157b-30e4-3205-6368718b2aed",
+                "indexedAsKeyword": false,
+                "system": true,
+                "indexedLanguageId": "",
+                "unique": false,
+                "name": "creator",
+                "state": false,
+                "businessType": "Text",
+                "readOnlyConditionExpression": ""
+              },
+              {
+                "indexed": false,
+                "localized": false,
+                "objectFieldSettings": [],
+                "readOnly": "true",
+                "DBType": "Date",
+                "label": {
+                  "en_US": "Create Date"
+                },
+                "type": "Date",
+                "required": false,
+                "externalReferenceCode": "2199470f-8ded-7065-0dd3-950404248767",
+                "indexedAsKeyword": false,
+                "system": true,
+                "indexedLanguageId": "",
+                "unique": false,
+                "name": "createDate",
+                "state": false,
+                "businessType": "Date",
+                "readOnlyConditionExpression": ""
+              },
+              {
+                "indexed": false,
+                "localized": false,
+                "objectFieldSettings": [],
+                "readOnly": "false",
+                "DBType": "String",
+                "label": {
+                  "en_US": "External Reference Code"
+                },
+                "type": "String",
+                "required": false,
+                "externalReferenceCode": "11966dba-f607-5f41-1824-ed6272ad81b9",
+                "indexedAsKeyword": false,
+                "system": true,
+                "indexedLanguageId": "",
+                "unique": false,
+                "name": "externalReferenceCode",
+                "state": false,
+                "businessType": "Text",
+                "readOnlyConditionExpression": ""
+              },
+              {
+                "indexed": true,
+                "localized": false,
+                "objectFieldSettings": [],
+                "readOnly": "true",
+                "DBType": "Long",
+                "label": {
+                  "en_US": "ID"
+                },
+                "type": "Long",
+                "required": false,
+                "externalReferenceCode": "852583f0-a881-267a-58f9-a49220e7b803",
+                "indexedAsKeyword": true,
+                "system": true,
+                "indexedLanguageId": "",
+                "unique": false,
+                "name": "id",
+                "state": false,
+                "businessType": "LongInteger",
+                "readOnlyConditionExpression": ""
+              },
+              {
+                "indexed": false,
+                "localized": false,
+                "objectFieldSettings": [],
+                "readOnly": "true",
+                "DBType": "Date",
+                "label": {
+                  "en_US": "Modified Date"
+                },
+                "type": "Date",
+                "required": false,
+                "externalReferenceCode": "3937c0e3-64d8-0fcd-118d-9bdc0731e858",
+                "indexedAsKeyword": false,
+                "system": true,
+                "indexedLanguageId": "",
+                "unique": false,
+                "name": "modifiedDate",
+                "state": false,
+                "businessType": "Date",
+                "readOnlyConditionExpression": ""
+              },
+              {
+                "indexed": false,
+                "localized": false,
+                "objectFieldSettings": [],
+                "readOnly": "true",
+                "DBType": "String",
+                "label": {
+                  "en_US": "Status"
+                },
+                "type": "String",
+                "required": false,
+                "externalReferenceCode": "5a8adba7-6ff5-5136-aa88-30ecccb93d72",
+                "indexedAsKeyword": false,
+                "system": true,
+                "indexedLanguageId": "",
+                "unique": false,
+                "name": "status",
+                "state": false,
+                "businessType": "Text",
+                "readOnlyConditionExpression": ""
+              },
+              {
+                "indexed": true,
+                "localized": true,
+                "objectFieldSettings": [],
+                "readOnly": "false",
+                "DBType": "String",
+                "label": {
+                  "en_US": "Inventory Name"
+                },
+                "type": "String",
+                "required": false,
+                "externalReferenceCode": "069c3680-09c8-0c3c-bbb1-db4cede4d632",
+                "indexedAsKeyword": false,
+                "system": false,
+                "indexedLanguageId": "en_US",
+                "unique": false,
+                "name": "inventoryName",
+                "state": false,
+                "businessType": "Text",
+                "readOnlyConditionExpression": ""
+              }
+            ],
+            "restContextPath": "/o/c/inventorydetailses",
+            "scope": "company",
+            "portlet": true,
+            "modifiable": true,
+            "parameterRequired": false,
+            "enableObjectEntryHistory": false,
+            "titleObjectFieldName": "id",
+            "objectValidationRules": [],
+            "active": true,
+            "defaultLanguageId": "en_US",
+            "enableIndexSearch": true,
+            "label": {
+              "en_US": "Inventory Details"
+            },
+            "panelCategoryKey": "control_panel.object",
+            "pluralLabel": {
+              "en_US": "Inventory Details"
+            },
+            "objectLayouts": [],
+            "system": false,
+            "objectViews": [],
+            "enableObjectEntryDraft": true,
+            "name": "InventoryDetails",
+            "status": {
+              "label_i18n": "Approved",
+              "code": 0,
+              "label": "approved"
+            }
+          },
+          "objectDefinitionExternalReferenceCode": "0ec7b7e5-7f91-d2cc-4356-8003e50b0566",
+          "linkedObjectDefinition": false,
+          "positionX": 0
+        },
+        {
+          "positionY": 0,
+          "objectDefinition": {
+            "enableComments": false,
+            "objectRelationships": [
+              {
+                "objectDefinitionSystem2": false,
+                "objectField": {
+                  "relationshipType": "oneToMany",
+                  "indexed": true,
+                  "localized": false,
+                  "objectRelationshipExternalReferenceCode": "f7b4af7e-8845-609b-3d74-af789d6f075d",
+                  "objectFieldSettings": [
+                    {
+                      "name": "objectDefinition1ShortName",
+                      "value": "InventoryOnboarding"
+                    },
+                    {
+                      "name": "objectRelationshipERCObjectFieldName",
+                      "value": "r_inventoryAttributeRelationship_c_inventoryOnboardingERC"
+                    }
+                  ],
+                  "readOnly": "false",
+                  "DBType": "Long",
+                  "label": {
+                    "en_US": "Inventory Attribute Relationship"
+                  },
+                  "type": "Long",
+                  "required": false,
+                  "externalReferenceCode": "0978d1c8-c532-9813-4dc4-070d16cfea4c",
+                  "indexedAsKeyword": false,
+                  "system": false,
+                  "indexedLanguageId": "",
+                  "unique": false,
+                  "name": "r_inventoryAttributeRelationship_c_inventoryOnboardingId",
+                  "objectDefinitionExternalReferenceCode1": "inventory-onboarding",
+                  "state": false,
+                  "businessType": "Relationship",
+                  "readOnlyConditionExpression": ""
+                },
+                "parameterObjectFieldName": "",
+                "parameterObjectFieldId": 0,
+                "label": {
+                  "en_US": "Inventory Attribute Relationship"
+                },
+                "reverse": false,
+                "type": "oneToMany",
+                "externalReferenceCode": "f7b4af7e-8845-609b-3d74-af789d6f075d",
+                "objectDefinitionModifiable2": true,
+                "system": false,
+                "name": "inventoryAttributeRelationship",
+                "deletionType": "prevent",
+                "objectDefinitionExternalReferenceCode1": "inventory-onboarding",
+                "objectDefinitionExternalReferenceCode2": "dataset-inventory-attribute-details",
+                "objectDefinitionName2": "DatasetInventoryAttributeDetails"
+              }
+            ],
+            "objectFolderExternalReferenceCode": "data-exchange-inventory-onboarding",
+            "enableCategorization": true,
+            "accountEntryRestrictedObjectFieldName": "",
+            "objectActions": [],
+            "enableLocalization": true,
+            "accountEntryRestricted": false,
+            "externalReferenceCode": "inventory-onboarding",
+            "objectFields": [
+              {
+                "indexed": false,
+                "localized": false,
+                "objectFieldSettings": [],
+                "readOnly": "true",
+                "DBType": "String",
+                "label": {
+                  "en_US": "Author"
+                },
+                "type": "String",
+                "required": false,
+                "externalReferenceCode": "584b24fd-c241-620a-7ffe-1154d4d2e57d",
+                "indexedAsKeyword": false,
+                "system": true,
+                "indexedLanguageId": "",
+                "unique": false,
+                "name": "creator",
+                "state": false,
+                "businessType": "Text",
+                "readOnlyConditionExpression": ""
+              },
+              {
+                "indexed": false,
+                "localized": false,
+                "objectFieldSettings": [],
+                "readOnly": "true",
+                "DBType": "Date",
+                "label": {
+                  "en_US": "Create Date"
+                },
+                "type": "Date",
+                "required": false,
+                "externalReferenceCode": "4764ac54-642c-fc81-a866-3b785b9fa40b",
+                "indexedAsKeyword": false,
+                "system": true,
+                "indexedLanguageId": "",
+                "unique": false,
+                "name": "createDate",
+                "state": false,
+                "businessType": "Date",
+                "readOnlyConditionExpression": ""
+              },
+              {
+                "indexed": false,
+                "localized": false,
+                "objectFieldSettings": [],
+                "readOnly": "false",
+                "DBType": "String",
+                "label": {
+                  "en_US": "External Reference Code"
+                },
+                "type": "String",
+                "required": false,
+                "externalReferenceCode": "3c09766d-4810-9f01-ebeb-038d355eb358",
+                "indexedAsKeyword": false,
+                "system": true,
+                "indexedLanguageId": "",
+                "unique": false,
+                "name": "externalReferenceCode",
+                "state": false,
+                "businessType": "Text",
+                "readOnlyConditionExpression": ""
+              },
+              {
+                "indexed": true,
+                "localized": false,
+                "objectFieldSettings": [],
+                "readOnly": "true",
+                "DBType": "Long",
+                "label": {
+                  "en_US": "ID"
+                },
+                "type": "Long",
+                "required": false,
+                "externalReferenceCode": "1d8a27c9-7600-1351-a340-bdf884a12469",
+                "indexedAsKeyword": true,
+                "system": true,
+                "indexedLanguageId": "",
+                "unique": false,
+                "name": "id",
+                "state": false,
+                "businessType": "LongInteger",
+                "readOnlyConditionExpression": ""
+              },
+              {
+                "indexed": false,
+                "localized": false,
+                "objectFieldSettings": [],
+                "readOnly": "true",
+                "DBType": "Date",
+                "label": {
+                  "en_US": "Modified Date"
+                },
+                "type": "Date",
+                "required": false,
+                "externalReferenceCode": "978dc4cb-cf30-72f4-ed45-21a9442abef8",
+                "indexedAsKeyword": false,
+                "system": true,
+                "indexedLanguageId": "",
+                "unique": false,
+                "name": "modifiedDate",
+                "state": false,
+                "businessType": "Date",
+                "readOnlyConditionExpression": ""
+              },
+              {
+                "indexed": false,
+                "localized": false,
+                "objectFieldSettings": [],
+                "readOnly": "true",
+                "DBType": "String",
+                "label": {
+                  "en_US": "Status"
+                },
+                "type": "String",
+                "required": false,
+                "externalReferenceCode": "06d15f5e-7286-ac2b-e7f8-82d947371988",
+                "indexedAsKeyword": false,
+                "system": true,
+                "indexedLanguageId": "",
+                "unique": false,
+                "name": "status",
+                "state": false,
+                "businessType": "Text",
+                "readOnlyConditionExpression": ""
+              },
+              {
+                "indexed": true,
+                "localized": true,
+                "objectFieldSettings": [],
+                "readOnly": "false",
+                "DBType": "String",
+                "label": {
+                  "en_US": "Dataset Description"
+                },
+                "type": "String",
+                "required": false,
+                "externalReferenceCode": "dc0a2b8c-5402-6786-b590-5a84ae803046",
+                "indexedAsKeyword": false,
+                "system": false,
+                "indexedLanguageId": "en_US",
+                "unique": false,
+                "name": "datasetDescription",
+                "state": false,
+                "businessType": "Text",
+                "readOnlyConditionExpression": ""
+              },
+              {
+                "listTypeDefinitionExternalReferenceCode": "dataset-classification",
+                "indexed": true,
+                "localized": false,
+                "objectFieldSettings": [],
+                "readOnly": "false",
+                "DBType": "String",
+                "label": {
+                  "en_US": "Dataset Classification"
+                },
+                "type": "String",
+                "required": true,
+                "externalReferenceCode": "ea1c91dd-8fd2-3f40-b4dc-9f9d9407cb78",
+                "indexedAsKeyword": false,
+                "system": false,
+                "indexedLanguageId": "en_US",
+                "unique": false,
+                "name": "datasetClassification",
+                "state": false,
+                "businessType": "Picklist",
+                "readOnlyConditionExpression": ""
+              },
+              {
+                "listTypeDefinitionExternalReferenceCode": "inventory-scale",
+                "indexed": true,
+                "localized": false,
+                "objectFieldSettings": [],
+                "readOnly": "false",
+                "DBType": "String",
+                "label": {
+                  "en_US": "User Demand"
+                },
+                "type": "String",
+                "required": true,
+                "externalReferenceCode": "08f78a97-388c-7856-7993-a8e443c1d090",
+                "indexedAsKeyword": false,
+                "system": false,
+                "indexedLanguageId": "en_US",
+                "unique": false,
+                "name": "userDemand",
+                "state": false,
+                "businessType": "Picklist",
+                "readOnlyConditionExpression": ""
+              },
+              {
+                "listTypeDefinitionExternalReferenceCode": "inventory-scale",
+                "indexed": true,
+                "localized": false,
+                "objectFieldSettings": [],
+                "readOnly": "false",
+                "DBType": "String",
+                "label": {
+                  "en_US": "Economic Impact"
+                },
+                "type": "String",
+                "required": true,
+                "externalReferenceCode": "d47a3cdf-4445-e131-7b1e-1ccaa1b77b3f",
+                "indexedAsKeyword": false,
+                "system": false,
+                "indexedLanguageId": "en_US",
+                "unique": false,
+                "name": "economicImpact",
+                "state": false,
+                "businessType": "Picklist",
+                "readOnlyConditionExpression": ""
+              },
+              {
+                "listTypeDefinitionExternalReferenceCode": "inventory-scale",
+                "indexed": true,
+                "localized": false,
+                "objectFieldSettings": [],
+                "readOnly": "false",
+                "DBType": "String",
+                "label": {
+                  "en_US": "Better Services"
+                },
+                "type": "String",
+                "required": true,
+                "externalReferenceCode": "63a88850-c055-38ab-a348-6886b67484b4",
+                "indexedAsKeyword": false,
+                "system": false,
+                "indexedLanguageId": "en_US",
+                "unique": false,
+                "name": "betterServices",
+                "state": false,
+                "businessType": "Picklist",
+                "readOnlyConditionExpression": ""
+              },
+              {
+                "listTypeDefinitionExternalReferenceCode": "inventory-scale",
+                "indexed": true,
+                "localized": false,
+                "objectFieldSettings": [],
+                "readOnly": "false",
+                "DBType": "String",
+                "label": {
+                  "en_US": "Better Governance"
+                },
+                "type": "String",
+                "required": true,
+                "externalReferenceCode": "50e0c240-8211-b556-e15e-59191a2a6a70",
+                "indexedAsKeyword": false,
+                "system": false,
+                "indexedLanguageId": "en_US",
+                "unique": false,
+                "name": "betterGovernance",
+                "state": false,
+                "businessType": "Picklist",
+                "readOnlyConditionExpression": ""
+              },
+              {
+                "indexed": true,
+                "localized": true,
+                "objectFieldSettings": [],
+                "readOnly": "false",
+                "DBType": "String",
+                "label": {
+                  "en_US": "Release Year"
+                },
+                "type": "String",
+                "required": false,
+                "externalReferenceCode": "e194e3d2-f75c-da7e-a524-b41a2454ccd1",
+                "indexedAsKeyword": false,
+                "system": false,
+                "indexedLanguageId": "en_US",
+                "unique": false,
+                "name": "releaseYear",
+                "state": false,
+                "businessType": "Text",
+                "readOnlyConditionExpression": ""
+              },
+              {
+                "indexed": true,
+                "localized": true,
+                "objectFieldSettings": [],
+                "readOnly": "false",
+                "DBType": "String",
+                "label": {
+                  "en_US": "Release Month"
+                },
+                "type": "String",
+                "required": false,
+                "externalReferenceCode": "68c4e0f3-321f-cb82-b3a6-cff88650a79a",
+                "indexedAsKeyword": false,
+                "system": false,
+                "indexedLanguageId": "en_US",
+                "unique": false,
+                "name": "releaseMonth",
+                "state": false,
+                "businessType": "Text",
+                "readOnlyConditionExpression": ""
+              },
+              {
+                "listTypeDefinitionExternalReferenceCode": "inventory-boolean-values",
+                "indexed": true,
+                "localized": false,
+                "objectFieldSettings": [],
+                "readOnly": "false",
+                "DBType": "String",
+                "label": {
+                  "en_US": "Defined Owner"
+                },
+                "type": "String",
+                "required": true,
+                "externalReferenceCode": "8d41d1d3-2873-85e1-29cb-7c50624d1624",
+                "indexedAsKeyword": false,
+                "system": false,
+                "indexedLanguageId": "en_US",
+                "unique": false,
+                "name": "definedOwner",
+                "state": false,
+                "businessType": "Picklist",
+                "readOnlyConditionExpression": ""
+              },
+              {
+                "listTypeDefinitionExternalReferenceCode": "inventory-boolean-values",
+                "indexed": true,
+                "localized": false,
+                "objectFieldSettings": [],
+                "readOnly": "false",
+                "DBType": "String",
+                "label": {
+                  "en_US": "Existing Metadata"
+                },
+                "type": "String",
+                "required": true,
+                "externalReferenceCode": "332356f6-2799-3833-67c1-54ed2c8b81f5",
+                "indexedAsKeyword": false,
+                "system": false,
+                "indexedLanguageId": "en_US",
+                "unique": false,
+                "name": "existingMetadata",
+                "state": false,
+                "businessType": "Picklist",
+                "readOnlyConditionExpression": ""
+              },
+              {
+                "listTypeDefinitionExternalReferenceCode": "inventory-boolean-values",
+                "indexed": true,
+                "localized": false,
+                "objectFieldSettings": [],
+                "readOnly": "false",
+                "DBType": "String",
+                "label": {
+                  "en_US": "Already Published"
+                },
+                "type": "String",
+                "required": true,
+                "externalReferenceCode": "82030ae8-a7ef-8ccb-2e97-52ad1ffb4364",
+                "indexedAsKeyword": false,
+                "system": false,
+                "indexedLanguageId": "en_US",
+                "unique": false,
+                "name": "alreadyPublished",
+                "state": false,
+                "businessType": "Picklist",
+                "readOnlyConditionExpression": ""
+              },
+              {
+                "listTypeDefinitionExternalReferenceCode": "inventory-boolean-values",
+                "indexed": true,
+                "localized": false,
+                "objectFieldSettings": [],
+                "readOnly": "false",
+                "DBType": "String",
+                "label": {
+                  "en_US": "Open Format"
+                },
+                "type": "String",
+                "required": true,
+                "externalReferenceCode": "2226175f-a6a4-89d2-8593-8e37dc138c0c",
+                "indexedAsKeyword": false,
+                "system": false,
+                "indexedLanguageId": "en_US",
+                "unique": false,
+                "name": "openFormat",
+                "state": false,
+                "businessType": "Picklist",
+                "readOnlyConditionExpression": ""
+              },
+              {
+                "indexed": true,
+                "localized": true,
+                "objectFieldSettings": [],
+                "readOnly": "false",
+                "DBType": "String",
+                "label": {
+                  "en_US": "Dataset Name"
+                },
+                "type": "String",
+                "required": false,
+                "externalReferenceCode": "3f9c0ff7-2a24-b558-722d-8d1fb6509bd1",
+                "indexedAsKeyword": false,
+                "system": false,
+                "indexedLanguageId": "en_US",
+                "unique": false,
+                "name": "datasetName",
+                "state": false,
+                "businessType": "Text",
+                "readOnlyConditionExpression": ""
+              },
+              {
+                "relationshipType": "oneToMany",
+                "indexed": true,
+                "localized": false,
+                "objectRelationshipExternalReferenceCode": "96e8db97-49df-2da5-24b3-c73986a3d923",
+                "objectFieldSettings": [
+                  {
+                    "name": "objectDefinition1ShortName",
+                    "value": "InventoryDetails"
+                  },
+                  {
+                    "name": "objectRelationshipERCObjectFieldName",
+                    "value": "r_inventoryDatasetRelationship_c_inventoryDetailsERC"
+                  }
+                ],
+                "readOnly": "false",
+                "DBType": "Long",
+                "label": {
+                  "en_US": "Inventory Dataset Relationship"
+                },
+                "type": "Long",
+                "required": false,
+                "externalReferenceCode": "5c7ff3ce-fc19-d3ad-3773-c5912e24033e",
+                "indexedAsKeyword": false,
+                "system": false,
+                "indexedLanguageId": "",
+                "unique": false,
+                "name": "r_inventoryDatasetRelationship_c_inventoryDetailsId",
+                "objectDefinitionExternalReferenceCode1": "0ec7b7e5-7f91-d2cc-4356-8003e50b0566",
+                "state": false,
+                "businessType": "Relationship",
+                "readOnlyConditionExpression": ""
+              }
+            ],
+            "restContextPath": "/o/c/inventoryonboardings",
+            "scope": "company",
+            "portlet": true,
+            "modifiable": true,
+            "parameterRequired": false,
+            "enableObjectEntryHistory": false,
+            "titleObjectFieldName": "id",
+            "objectValidationRules": [],
+            "active": true,
+            "defaultLanguageId": "en_US",
+            "enableIndexSearch": true,
+            "label": {
+              "en_US": "Inventory Onboarding"
+            },
+            "panelCategoryKey": "control_panel.object",
+            "pluralLabel": {
+              "en_US": "Inventory Onboarding"
+            },
+            "objectLayouts": [],
+            "system": false,
+            "objectViews": [],
+            "enableObjectEntryDraft": true,
+            "name": "InventoryOnboarding",
+            "status": {
+              "label_i18n": "Approved",
+              "code": 0,
+              "label": "approved"
+            }
+          },
+          "objectDefinitionExternalReferenceCode": "inventory-onboarding",
+          "linkedObjectDefinition": false,
+          "positionX": 0
+        },
+        {
+          "positionY": 0,
+          "objectDefinition": {
+            "enableComments": false,
+            "objectRelationships": [],
+            "objectFolderExternalReferenceCode": "data-exchange-inventory-onboarding",
+            "enableCategorization": true,
+            "accountEntryRestrictedObjectFieldName": "",
+            "objectActions": [],
+            "enableLocalization": true,
+            "accountEntryRestricted": false,
+            "externalReferenceCode": "dataset-inventory-attribute-details",
+            "objectFields": [
+              {
+                "indexed": false,
+                "localized": false,
+                "objectFieldSettings": [],
+                "readOnly": "true",
+                "DBType": "String",
+                "label": {
+                  "en_US": "Author"
+                },
+                "type": "String",
+                "required": false,
+                "externalReferenceCode": "19961cd5-a0ac-50f7-4bda-5e53331320fc",
+                "indexedAsKeyword": false,
+                "system": true,
+                "indexedLanguageId": "",
+                "unique": false,
+                "name": "creator",
+                "state": false,
+                "businessType": "Text",
+                "readOnlyConditionExpression": ""
+              },
+              {
+                "indexed": false,
+                "localized": false,
+                "objectFieldSettings": [],
+                "readOnly": "true",
+                "DBType": "Date",
+                "label": {
+                  "en_US": "Create Date"
+                },
+                "type": "Date",
+                "required": false,
+                "externalReferenceCode": "97ffce48-8298-6536-a3df-5cfa17b1e89e",
+                "indexedAsKeyword": false,
+                "system": true,
+                "indexedLanguageId": "",
+                "unique": false,
+                "name": "createDate",
+                "state": false,
+                "businessType": "Date",
+                "readOnlyConditionExpression": ""
+              },
+              {
+                "indexed": false,
+                "localized": false,
+                "objectFieldSettings": [],
+                "readOnly": "false",
+                "DBType": "String",
+                "label": {
+                  "en_US": "External Reference Code"
+                },
+                "type": "String",
+                "required": false,
+                "externalReferenceCode": "b1654e9e-e586-d70c-5dd9-35d4bae5be39",
+                "indexedAsKeyword": false,
+                "system": true,
+                "indexedLanguageId": "",
+                "unique": false,
+                "name": "externalReferenceCode",
+                "state": false,
+                "businessType": "Text",
+                "readOnlyConditionExpression": ""
+              },
+              {
+                "indexed": true,
+                "localized": false,
+                "objectFieldSettings": [],
+                "readOnly": "true",
+                "DBType": "Long",
+                "label": {
+                  "en_US": "ID"
+                },
+                "type": "Long",
+                "required": false,
+                "externalReferenceCode": "42550245-a650-cd8f-6075-63a93729ac03",
+                "indexedAsKeyword": true,
+                "system": true,
+                "indexedLanguageId": "",
+                "unique": false,
+                "name": "id",
+                "state": false,
+                "businessType": "LongInteger",
+                "readOnlyConditionExpression": ""
+              },
+              {
+                "indexed": false,
+                "localized": false,
+                "objectFieldSettings": [],
+                "readOnly": "true",
+                "DBType": "Date",
+                "label": {
+                  "en_US": "Modified Date"
+                },
+                "type": "Date",
+                "required": false,
+                "externalReferenceCode": "d7c33e72-4a0c-dbde-c0e7-792cf7e70161",
+                "indexedAsKeyword": false,
+                "system": true,
+                "indexedLanguageId": "",
+                "unique": false,
+                "name": "modifiedDate",
+                "state": false,
+                "businessType": "Date",
+                "readOnlyConditionExpression": ""
+              },
+              {
+                "indexed": false,
+                "localized": false,
+                "objectFieldSettings": [],
+                "readOnly": "true",
+                "DBType": "String",
+                "label": {
+                  "en_US": "Status"
+                },
+                "type": "String",
+                "required": false,
+                "externalReferenceCode": "71a0e714-4ede-b7e1-dfc5-a92f17704e9c",
+                "indexedAsKeyword": false,
+                "system": true,
+                "indexedLanguageId": "",
+                "unique": false,
+                "name": "status",
+                "state": false,
+                "businessType": "Text",
+                "readOnlyConditionExpression": ""
+              },
+              {
+                "indexed": true,
+                "localized": true,
+                "objectFieldSettings": [],
+                "readOnly": "false",
+                "DBType": "String",
+                "label": {
+                  "en_US": "Attribute"
+                },
+                "type": "String",
+                "required": false,
+                "externalReferenceCode": "53d0b3d4-bfff-a882-0178-a3afb8528fb7",
+                "indexedAsKeyword": false,
+                "system": false,
+                "indexedLanguageId": "en_US",
+                "unique": false,
+                "name": "attribute",
+                "state": false,
+                "businessType": "Text",
+                "readOnlyConditionExpression": ""
+              },
+              {
+                "indexed": true,
+                "localized": true,
+                "objectFieldSettings": [],
+                "readOnly": "false",
+                "DBType": "String",
+                "label": {
+                  "en_US": "Attribute Description"
+                },
+                "type": "String",
+                "required": false,
+                "externalReferenceCode": "13957f0e-d70c-01e5-b19a-b25e728b7846",
+                "indexedAsKeyword": false,
+                "system": false,
+                "indexedLanguageId": "en_US",
+                "unique": false,
+                "name": "attributeDescription",
+                "state": false,
+                "businessType": "Text",
+                "readOnlyConditionExpression": ""
+              },
+              {
+                "relationshipType": "oneToMany",
+                "indexed": true,
+                "localized": false,
+                "objectRelationshipExternalReferenceCode": "f7b4af7e-8845-609b-3d74-af789d6f075d",
+                "objectFieldSettings": [
+                  {
+                    "name": "objectDefinition1ShortName",
+                    "value": "InventoryOnboarding"
+                  },
+                  {
+                    "name": "objectRelationshipERCObjectFieldName",
+                    "value": "r_inventoryAttributeRelationship_c_inventoryOnboardingERC"
+                  }
+                ],
+                "readOnly": "false",
+                "DBType": "Long",
+                "label": {
+                  "en_US": "Inventory Attribute Relationship"
+                },
+                "type": "Long",
+                "required": false,
+                "externalReferenceCode": "0978d1c8-c532-9813-4dc4-070d16cfea4c",
+                "indexedAsKeyword": false,
+                "system": false,
+                "indexedLanguageId": "",
+                "unique": false,
+                "name": "r_inventoryAttributeRelationship_c_inventoryOnboardingId",
+                "objectDefinitionExternalReferenceCode1": "inventory-onboarding",
+                "state": false,
+                "businessType": "Relationship",
+                "readOnlyConditionExpression": ""
+              }
+            ],
+            "restContextPath": "/o/c/datasetinventoryattributedetailses",
+            "scope": "company",
+            "portlet": true,
+            "modifiable": true,
+            "parameterRequired": false,
+            "enableObjectEntryHistory": false,
+            "titleObjectFieldName": "id",
+            "objectValidationRules": [],
+            "active": true,
+            "defaultLanguageId": "en_US",
+            "enableIndexSearch": true,
+            "label": {
+              "en_US": "Dataset Inventory Attribute Details"
+            },
+            "panelCategoryKey": "control_panel.object",
+            "pluralLabel": {
+              "en_US": "Dataset Inventory Attribute Details"
+            },
+            "objectLayouts": [],
+            "system": false,
+            "objectViews": [],
+            "enableObjectEntryDraft": true,
+            "name": "DatasetInventoryAttributeDetails",
+            "status": {
+              "label_i18n": "Approved",
+              "code": 0,
+              "label": "approved"
+            }
+          },
+          "objectDefinitionExternalReferenceCode": "dataset-inventory-attribute-details",
+          "linkedObjectDefinition": false,
+          "positionX": 0
+        }
+      ],
+      "name": "DataExchange",
+      "label": {
+        "en_US": "Data  Exchange Inventory Onboarding"
+      },
+      "actions": {
+        "permissions": {},
+        "get": {},
+        "update": {},
+        "delete": {}
+      },
+      "externalReferenceCode": "data-exchange-inventory-onboarding"
+    }
+  ]
+}

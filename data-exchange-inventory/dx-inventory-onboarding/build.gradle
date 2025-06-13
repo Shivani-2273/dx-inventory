@@ -1,0 +1,11 @@
+dependencies {
+	compileOnly group: "com.liferay.portal", name: "release.dxp.api"
+
+
+	compileOnly group: "org.apache.poi", name: "poi", version: "4.1.2"
+	compileOnly group: "org.apache.poi", name: "poi-ooxml", version: "4.1.2"
+	compileOnly group: "org.apache.poi", name: "poi-scratchpad", version: "4.1.2"
+	compileOnly group: "org.apache.commons", name: "commons-collections4", version: "4.4"
+
+	cssBuilder group: "com.liferay", name: "com.liferay.css.builder", version: "3.1.4"
+}

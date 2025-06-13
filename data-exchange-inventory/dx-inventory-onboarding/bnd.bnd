@@ -1,0 +1,10 @@
+Bundle-Name: dx-inventory-onboarding
+Bundle-SymbolicName: com.dx.liferay.inventory
+Bundle-Version: 1.0.0
+Export-Package: \
+    com.dx.liferay.inventory.constants,\
+    com.dx.liferay.inventory.service
+
+Provide-Capability:\
+	liferay.language.resources;\
+		resource.bundle.base.name="content.Language"

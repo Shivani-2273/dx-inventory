@@ -68,4 +68,13 @@ public interface InventoryService {
     void updateMultipleDatasets(long companyId, long userId, long inventoryId, List<Map<String, Object>> submittedDatasets, String userLocale, boolean isDraft)
             throws PortalException;
 
+
+    /**
+     * Updates the inventory status based on the action type (draft vs submit)
+     * @param inventoryId the inventory entry ID to update
+     * @param isDraft true if saving as draft, false if submitting
+     * @param actionRequest the action request for GraphQL context
+     * @throws Exception if update fails
+     */
+    void updateInventoryStatus(long inventoryId, boolean isDraft, ActionRequest actionRequest) throws Exception;
 }

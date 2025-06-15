@@ -25,4 +25,8 @@ public class InventoryConstants {
     public static final int DEFAULT_HEADER_ROW_COUNT = 2;
     public static final String JSON_CONTENT_TYPE = "application/json";
     public static final String DEFAULT_ENCODING = "UTF-8";
+    public static final int DRAFT_STATUS_CODE = 2;
+    public static final int PENDING_STATUS_CODE = 1;
+    public static final String CREATE_MUTATION_TYPE = "create";
+    public static final String UPDATE_MUTATION_TYPE = "update";
 }

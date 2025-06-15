@@ -3,13 +3,14 @@
 <%@ page import="java.util.ResourceBundle" %>
 <%@ page import="com.liferay.portal.kernel.util.ResourceBundleUtil" %>
 <%@ page import="com.liferay.portal.kernel.util.PortalUtil" %>
+<%@ page import="com.liferay.object.model.ObjectEntry" %>
+<%@ page import="com.liferay.object.service.ObjectEntryLocalServiceUtil" %>
+<%@ page import="com.liferay.portal.kernel.workflow.WorkflowConstants" %>
+<%@ page import="com.liferay.portal.kernel.exception.PortalException" %>
 <%@ page import="com.liferay.portal.kernel.service.RoleLocalServiceUtil" %>
 <%@ page import="com.liferay.portal.kernel.model.Role" %>
 <%@ page import="java.util.List" %>
-<%@ page import="com.liferay.object.service.ObjectEntryLocalServiceUtil" %>
-<%@ page import="com.liferay.object.model.ObjectEntry" %>
-<%@ page import="com.liferay.portal.kernel.exception.PortalException" %>
-<%@ page import="com.liferay.portal.kernel.workflow.WorkflowConstants" %>
+
 <%@ include file="/init.jsp" %>
 
 <portlet:actionURL name="/addDataset" var="addDatasetURL" />
@@ -28,9 +29,9 @@
 	String inventoryId = originalRequest.getParameter("inventoryId");
 	long userId = themeDisplay.getUserId();
 	List<Role> roles = RoleLocalServiceUtil.getUserRoles(userId);
+	boolean isDataSteward = roles.stream().anyMatch(role -> "Data Steward".equals(role.getName()));
 
 	ObjectEntry inventoryEntry = null;
-	boolean isDataLeader = roles.stream().anyMatch(role -> "Data Leader".equals(role.getName()));
 	if (inventoryId != null && !inventoryId.trim().isEmpty()) {
 		try {
 			inventoryEntry = ObjectEntryLocalServiceUtil.getObjectEntry(Long.parseLong(inventoryId));
@@ -42,12 +43,11 @@
     String userMode = "";
 	if(inventoryEntry != null){
 		if(!"pending".equalsIgnoreCase(WorkflowConstants.getStatusLabel(inventoryEntry.getStatus()))){
-			if(isDataLeader && inventoryEntry.getUserId() == userId){
+			if(inventoryEntry.getUserId() == userId){
 				userMode ="update";
 			}
 			else {
 				userMode = "review";
-
             }
 		}else{
 			userMode = "review";
@@ -450,6 +450,11 @@
 		</div>
 	</div>
 </div>
+
+
+<%if ("review".equals(userMode) && isDataSteward) { %>
+<%@ include file="compliance-score.jsp" %>
+<% } %>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.13.6/underscore-min.js"></script>
 <script src="<%=request.getContextPath()%>/js/index.js"></script>

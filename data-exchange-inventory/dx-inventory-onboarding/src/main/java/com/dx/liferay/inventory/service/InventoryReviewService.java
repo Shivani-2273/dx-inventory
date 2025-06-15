@@ -303,33 +303,81 @@ public class InventoryReviewService {
 
 
 
-    public String createDraftViaGraphQL(String inventoryName, ActionRequest actionRequest) throws Exception {
+//    public String createDraftViaGraphQL(String inventoryName, int statusCode, ActionRequest actionRequest) throws Exception {
+//        String csrfToken = AuthTokenUtil.getToken(PortalUtil.getHttpServletRequest(actionRequest));
+//
+//        // GraphQL mutation
+//        String query = """
+//            mutation {
+//              c {
+//                createInventoryDetails(
+//                  InventoryDetails: {
+//                    inventoryName: "%s",
+//                    statusCode: %d
+//                  }
+//                ) {
+//                  id
+//                  inventoryName
+//                  statusCode
+//                }
+//              }
+//            }
+//        """.formatted(inventoryName.replace("\"", "\\\""), statusCode);
+//
+//        // Build JSON body
+//        JSONObject payload = JSONFactoryUtil.createJSONObject();
+//        payload.put("query", query);
+//
+//        // Execute the GraphQL mutation using the working method
+//        return executeGraphQLMutation(payload, csrfToken, actionRequest);
+//    }
+
+    public String executeInventoryGraphQLMutation(String mutationType, Long inventoryId, String inventoryName, int statusCode, ActionRequest actionRequest) throws Exception {
         String csrfToken = AuthTokenUtil.getToken(PortalUtil.getHttpServletRequest(actionRequest));
 
-        // GraphQL mutation
-        String query = """
+        String query;
+        if ("create".equals(mutationType)) {
+            query = """
             mutation {
               c {
                 createInventoryDetails(
                   InventoryDetails: {
                     inventoryName: "%s",
-                    statusCode: 2
+                    statusCode: %d
                   }
                 ) {
                   id
                   inventoryName
-                  statusCode
+                  status
                 }
               }
             }
-        """.formatted(inventoryName.replace("\"", "\\\""));
+        """.formatted(inventoryName.replace("\"", "\\\""), statusCode);
+        } else if ("update".equals(mutationType)) {
+            query = """
+            mutation {
+              c {
+                updateInventoryDetails(
+                  inventoryDetailsId: %d,
+                  InventoryDetails: {
+                    inventoryName: "%s",
+                    statusCode: %d
+                  }
+                ) {
+                  id
+                  inventoryName
+                  status
+                }
+              }
+            }
+        """.formatted(inventoryId, inventoryName.replace("\"", "\\\""), statusCode);
+        } else {
+            throw new IllegalArgumentException("Invalid mutation type: " + mutationType);
+        }
 
-        // Build JSON body
         JSONObject payload = JSONFactoryUtil.createJSONObject();
         payload.put("query", query);
-        _log.info("query ....." +payload);
-
-        // Execute the GraphQL mutation using the working method
+        _log.info("GraphQL " + mutationType + " query: " + payload);
 
         return executeGraphQLMutation(payload, csrfToken, actionRequest);
     }

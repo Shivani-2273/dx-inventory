@@ -65,7 +65,7 @@ public class InventoryServiceImpl implements InventoryService {
              objectEntry = _objectEntryLocalService.addObjectEntry(
                     userId, 0, inventoryObjectDefinition.getObjectDefinitionId(), values, new ServiceContext());
         }else{
-            String responseJson =  _inventoryReviewService.createDraftViaGraphQL(inventoryName, actionRequest);
+            String responseJson =  _inventoryReviewService.executeInventoryGraphQLMutation(InventoryConstants.CREATE_MUTATION_TYPE, null, inventoryName, InventoryConstants.DRAFT_STATUS_CODE, actionRequest);
             long draftId = extractIdFromGraphQLResponse(responseJson);
             objectEntry = _objectEntryLocalService.getObjectEntry(draftId);
         }
@@ -99,6 +99,16 @@ public class InventoryServiceImpl implements InventoryService {
         }
 
         return createInventoryDetails.getLong("id");
+    }
+
+    @Override
+    public void updateInventoryStatus(long inventoryId, boolean isDraft, ActionRequest actionRequest) throws Exception {
+        if (!isDraft) {
+            ObjectEntry inventoryEntry = _objectEntryLocalService.getObjectEntry(inventoryId);
+            String inventoryName = _inventoryHelper.getInventoryName(inventoryEntry);
+          _inventoryReviewService.executeInventoryGraphQLMutation(
+                    InventoryConstants.UPDATE_MUTATION_TYPE, inventoryId, inventoryName, InventoryConstants.PENDING_STATUS_CODE, actionRequest);
+        }
     }
 
     private String generateNextInventoryName(long companyId) throws PortalException {
@@ -585,12 +595,15 @@ public class InventoryServiceImpl implements InventoryService {
               String inventoryName = _inventoryHelper.getInventoryName(objectEntry);
               int datasetCount = _inventoryHelper.getInventoryDatasetCount(objectEntry);
               String status = _inventoryHelper.getInventoryStatus(objectEntry);
+              String creatorRole = _inventoryHelper.getUserRole(objectEntry.getUserId());
+
                 inventoryData.put("id", objectEntry.getObjectEntryId());
                 inventoryData.put("name", inventoryName);
                 inventoryData.put("datasetCount", datasetCount);
                 inventoryData.put("submittedDate", "Submitted: " + dateFormat.format(objectEntry.getCreateDate()));
                 inventoryData.put("status", status);
                 inventoryData.put("userId", objectEntry.getUserId());
+                inventoryData.put("creatorRole", creatorRole);
 
                 inventoryList.add(inventoryData);
             }

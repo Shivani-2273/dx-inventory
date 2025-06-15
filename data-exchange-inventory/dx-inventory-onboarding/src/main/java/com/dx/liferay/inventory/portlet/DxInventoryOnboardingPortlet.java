@@ -168,7 +168,13 @@ public class DxInventoryOnboardingPortlet extends MVCPortlet {
 		try {
 			UploadPortletRequest uploadPortletRequest = _portal.getUploadPortletRequest(resourceRequest);
 			File uploadedFile = uploadPortletRequest.getFile("file");
+			String fileName = uploadPortletRequest.getFileName("file");
+			_log.info("Processing file: " + fileName);
+			String mimeType = uploadPortletRequest.getContentType("file");
+			_log.info("MIME type: " + mimeType);
 			FileEntry sampleFileEntry = FileUtil.getSampleFileEntry(resourceRequest);
+
+			ThemeDisplay themeDisplay = (ThemeDisplay) resourceRequest.getAttribute(WebKeys.THEME_DISPLAY);
 
 			// Get the sample structure for field identification
 			FileStructure sampleStructure = FileValidationUtil.readSampleFileWithRules(sampleFileEntry);
@@ -176,6 +182,9 @@ public class DxInventoryOnboardingPortlet extends MVCPortlet {
 
 			// Parse the Excel file using service
 			List<Map<String, Object>> datasets = _excelParsingService.parseExcelFile(uploadedFile, sampleFileEntry);
+
+			// Upload file to Document and Media after successful validation
+			 FileUtil.uploadFileToDocumentAndMedia(uploadedFile, fileName, mimeType, themeDisplay);
 
 			// Create and send success response
 			JSONObject responseJson = createSuccessResponse(datasets,sampleStructure);
@@ -189,6 +198,8 @@ public class DxInventoryOnboardingPortlet extends MVCPortlet {
 			ResponseUtil.writeErrorResponse(resourceResponse, "Failed to process uploaded file. Please try again.", _jsonFactory);
 		}
 	}
+
+
 
 	/**
 	 * Creates a JSON success response containing processed datasets and field metadata.
@@ -213,6 +224,8 @@ public class DxInventoryOnboardingPortlet extends MVCPortlet {
 
 		return responseJson;
 	}
+
+
 
 	/**
 	 * Creates field metadata JSON object containing special fields and regular fields information.

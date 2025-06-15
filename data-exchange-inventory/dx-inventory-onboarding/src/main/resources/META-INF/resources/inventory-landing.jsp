@@ -3,6 +3,8 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="com.liferay.portal.kernel.util.PortalUtil" %>
 <%@ page import="com.liferay.portal.kernel.model.User" %>
+<%@ page import="com.liferay.portal.kernel.service.RoleLocalServiceUtil" %>
+<%@ page import="com.liferay.portal.kernel.model.Role" %>
 <%@ include file="/init.jsp" %>
 
 <portlet:renderURL var="initiateFormURL">
@@ -14,6 +16,10 @@
     User currentUser = PortalUtil.getUser(request);
     long currentUserId = (currentUser != null) ? currentUser.getUserId() : 0;
 
+    // Only need to check current user's role once
+    List<Role> roles = RoleLocalServiceUtil.getUserRoles(currentUserId);
+    boolean isDataSteward = roles.stream().anyMatch(role -> "Data Steward".equals(role.getName()));
+
     // Get inventory data from request attribute
     @SuppressWarnings("unchecked")
     List<Map<String, Object>> allInventoryList = (List<Map<String, Object>>) request.getAttribute("inventoryList");
@@ -23,16 +29,17 @@
 
     if (allInventoryList != null) {
         for (Map<String, Object> inventory : allInventoryList) {
+            Long entryUserId = (Long) inventory.get("userId");
             String status = (String) inventory.get("status");
-            Long lastUpdatedUserId = (Long) inventory.get("userId");
+            String creatorRole = (String) inventory.get("creatorRole");
 
-            if ("draft".equalsIgnoreCase(status)) {
-                // Only show draft entries if current user was the last to update them
-                if (lastUpdatedUserId != null && lastUpdatedUserId.equals(currentUserId)) {
-                    inventoryList.add(inventory);
-                }
-            } else {
-                // Show all non-draft entries
+            // Rule 1: Users can always see their own entries (both draft and non-draft)
+            if (entryUserId != null && entryUserId.equals(currentUserId)) {
+                inventoryList.add(inventory);
+            }
+
+            // Rule 2: Data Stewards can see non-draft entries created by Data Leaders
+            else if (isDataSteward && !"draft".equalsIgnoreCase(status) && "Data Leader".equals(creatorRole)) {
                 inventoryList.add(inventory);
             }
         }

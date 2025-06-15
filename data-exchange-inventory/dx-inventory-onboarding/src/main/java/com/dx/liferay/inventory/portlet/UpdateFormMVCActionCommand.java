@@ -52,8 +52,9 @@ public class UpdateFormMVCActionCommand implements MVCActionCommand {
 
             List<Map<String, Object>> updatedDatasets = _formExtractionUtil.extractDatasetsFromRequest(actionRequest, themeDisplay.getLanguageId());
             if (!updatedDatasets.isEmpty()) {
-                // Update the inventory datasets
+                // Update the inventory datasets with status
                 _inventoryService.updateMultipleDatasets(themeDisplay.getCompanyId(), themeDisplay.getUserId(), inventoryId, updatedDatasets, themeDisplay.getLanguageId(), isDraft);
+                _inventoryService.updateInventoryStatus(inventoryId, isDraft, actionRequest);
                 _log.info("Successfully updated inventory " + inventoryId + " with " + updatedDatasets.size() + " datasets");
             } else {
                 _log.warn("No datasets found in update request for inventory: " + inventoryId);

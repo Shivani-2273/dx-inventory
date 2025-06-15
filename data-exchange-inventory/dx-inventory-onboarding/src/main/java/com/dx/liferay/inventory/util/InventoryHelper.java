@@ -15,6 +15,8 @@ import com.liferay.petra.sql.dsl.query.DSLQuery;
 import com.liferay.portal.kernel.language.LanguageUtil;
 import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
+import com.liferay.portal.kernel.model.Role;
+import com.liferay.portal.kernel.service.RoleLocalServiceUtil;
 import com.liferay.portal.kernel.util.LocaleUtil;
 import com.liferay.portal.kernel.workflow.WorkflowConstants;
 import org.osgi.service.component.annotations.Component;
@@ -112,6 +114,25 @@ public class InventoryHelper {
         } catch (Exception e) {
             _log.error("Failed to get inventory datasets for inventory details ID: " + parentInventoryEntry.getObjectEntryId(), e);
             return new ArrayList<>();
+        }
+    }
+
+
+    public String getUserRole(long userId) {
+        try {
+            List<Role> roles = RoleLocalServiceUtil.getUserRoles(userId);
+
+
+            if (roles.stream().anyMatch(role -> "Data Leader".equals(role.getName()))) {
+                return "Data Leader";
+            }
+            if (roles.stream().anyMatch(role -> "Data Steward".equals(role.getName()))) {
+                return "Data Steward";
+            }
+            return "User";
+        } catch (Exception e) {
+            _log.warn("Could not  role for user " + userId + ": " + e.getMessage());
+            return "User";
         }
     }
 
